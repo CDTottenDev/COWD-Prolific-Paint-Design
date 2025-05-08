@@ -1,0 +1,202 @@
+"use client"
+
+import type React from "react"
+
+import { useState } from "react"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { Label } from "@/components/ui/label"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+import { Checkbox } from "@/components/ui/checkbox"
+import { CheckCircle, Upload } from "lucide-react"
+import { cn } from "@/lib/utils"
+
+const services = [
+  { id: "interior-painting", label: "Interior Painting" },
+  { id: "exterior-painting", label: "Exterior Painting" },
+  { id: "cabinet-painting", label: "Cabinet Painting" },
+  { id: "deck-staining", label: "Deck Staining" },
+  { id: "drywall-repair", label: "Drywall Repair" },
+  { id: "carpentry", label: "Carpentry" },
+  { id: "other", label: "Other Services" },
+]
+
+export default function QuoteForm() {
+  const [serviceType, setServiceType] = useState<string>("painting")
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [files, setFiles] = useState<File[]>([])
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) {
+      setFiles(Array.from(e.target.files))
+    }
+  }
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+
+    // Simulate form submission
+    setTimeout(() => {
+      setIsSubmitting(false)
+      setIsSubmitted(true)
+    }, 1500)
+  }
+
+  if (isSubmitted) {
+    return (
+      <div className="flex flex-col items-center justify-center p-6 text-center">
+        <CheckCircle className="h-16 w-16 text-gold mb-4" />
+        <h3 className="text-xl font-bold mb-2">Quote Request Received!</h3>
+        <p className="text-gray-600 dark:text-gray-400 mb-4">
+          Thank you for your quote request. We'll review your project details and get back to you with a personalized
+          quote as soon as possible.
+        </p>
+        <Button
+          onClick={() => setIsSubmitted(false)}
+          variant="outline"
+          className="border-gold text-gold hover:bg-gold hover:text-black"
+        >
+          Submit Another Request
+        </Button>
+      </div>
+    )
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-6">
+      <div className="space-y-4">
+        <h3 className="text-lg font-medium">Contact Information</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="space-y-2">
+            <Label htmlFor="name">Name</Label>
+            <Input id="name" placeholder="Your name" required />
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="phone">Phone</Label>
+            <Input id="phone" type="tel" placeholder="Your phone number" required />
+          </div>
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="email">Email</Label>
+          <Input id="email" type="email" placeholder="Your email address" required />
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="address">Project Address</Label>
+          <Input id="address" placeholder="Address of the project" required />
+        </div>
+      </div>
+
+      <div className="space-y-4">
+        <h3 className="text-lg font-medium">Service Type</h3>
+        <RadioGroup defaultValue="painting" onValueChange={setServiceType}>
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="painting" id="painting" />
+            <Label htmlFor="painting">Residential Painting</Label>
+          </div>
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="contracting" id="contracting" />
+            <Label htmlFor="contracting">Other Contracting Services</Label>
+          </div>
+        </RadioGroup>
+      </div>
+
+      {serviceType === "painting" && (
+        <div className="space-y-4">
+          <h3 className="text-lg font-medium">Painting Details</h3>
+          <div className="space-y-2">
+            <Label htmlFor="sqft">Approximate Square Footage</Label>
+            <Input id="sqft" type="number" placeholder="Square footage of the area to be painted" />
+          </div>
+          <div className="space-y-2">
+            <Label>Services Needed (Select all that apply)</Label>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+              {services.slice(0, 5).map((service) => (
+                <div key={service.id} className="flex items-center space-x-2">
+                  <Checkbox id={service.id} />
+                  <Label htmlFor={service.id}>{service.label}</Label>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {serviceType === "contracting" && (
+        <div className="space-y-4">
+          <h3 className="text-lg font-medium">Contracting Details</h3>
+          <div className="space-y-2">
+            <Label>Services Needed (Select all that apply)</Label>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+              {services.slice(4).map((service) => (
+                <div key={service.id} className="flex items-center space-x-2">
+                  <Checkbox id={service.id} />
+                  <Label htmlFor={service.id}>{service.label}</Label>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      <div className="space-y-4">
+        <h3 className="text-lg font-medium">Project Details</h3>
+        <div className="space-y-2">
+          <Label htmlFor="timeline">Desired Timeline</Label>
+          <RadioGroup defaultValue="flexible">
+            <div className="flex items-center space-x-2">
+              <RadioGroupItem value="asap" id="asap" />
+              <Label htmlFor="asap">As soon as possible</Label>
+            </div>
+            <div className="flex items-center space-x-2">
+              <RadioGroupItem value="1month" id="1month" />
+              <Label htmlFor="1month">Within 1 month</Label>
+            </div>
+            <div className="flex items-center space-x-2">
+              <RadioGroupItem value="flexible" id="flexible" />
+              <Label htmlFor="flexible">Flexible / Not urgent</Label>
+            </div>
+          </RadioGroup>
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="description">Project Description</Label>
+          <Textarea id="description" placeholder="Please describe your project in detail" rows={5} required />
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="photos">Upload Photos (Optional)</Label>
+          <div
+            className={cn(
+              "border-2 border-dashed rounded-md p-6 flex flex-col items-center justify-center cursor-pointer hover:border-gold/50 transition-colors",
+              files.length > 0 ? "border-gold/70" : "border-gray-300",
+            )}
+            onClick={() => document.getElementById("file-upload")?.click()}
+          >
+            <input
+              id="file-upload"
+              type="file"
+              multiple
+              accept="image/*"
+              className="hidden"
+              onChange={handleFileChange}
+            />
+            <Upload className="h-10 w-10 text-gray-400 mb-2" />
+            <p className="text-sm text-center text-gray-600 dark:text-gray-400">
+              {files.length > 0
+                ? `${files.length} file${files.length > 1 ? "s" : ""} selected`
+                : "Drag and drop files here or click to browse"}
+            </p>
+            <p className="text-xs text-center text-gray-500 mt-1">
+              Upload photos of the area to help us provide a more accurate quote
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <Button type="submit" disabled={isSubmitting} className="w-full bg-gold hover:bg-gold/90 text-black">
+        {isSubmitting ? "Submitting..." : "Request Quote"}
+      </Button>
+    </form>
+  )
+}
