@@ -2,7 +2,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import ParallaxSection from "@/components/parallax-section"
 import ContactForm from "@/components/contact-form"
-import LeafletMap from "@/components/Leafletmap"
+import GoogleMapWrapper from "@/app/(user)/components/GoogleMapWrapper"
 import { Phone, Mail, MapPin, Clock } from "lucide-react"
 
 export default function ContactPage() {
@@ -110,7 +110,7 @@ export default function ContactPage() {
           </div>
 
           <div className="h-[500px] rounded-lg overflow-hidden">
-            <LeafletMap />
+            <GoogleMapWrapper />
           </div>
         </div>
       </section>

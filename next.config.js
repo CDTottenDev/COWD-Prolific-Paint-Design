@@ -1,12 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  webpack: (config) => {
-    config.resolve.fallback = {
-      ...config.resolve.fallback,
-      fs: false,
-    };
-    return config;
+  reactStrictMode: true,
+  compiler: {
+    styledComponents: true,
   },
-}
+  turbopack: {
+    resolveAlias: {
+      underscore: "lodash",
+    },
+    resolveExtensions: [".mdx", ".tsx", ".ts", ".jsx", ".js", ".json"],
+  },
+};
 
-module.exports = nextConfig 
+module.exports = nextConfig; 

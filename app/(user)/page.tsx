@@ -20,13 +20,14 @@ import {
   Mail,
   MapPin,
 } from "lucide-react"
-import GoogleMapComponent from "@/components/GoogleMap"
+import GoogleMapWrapper from "@/app/(user)/components/GoogleMapWrapper"
+import React from 'react'
 
 export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section with Parallax */}
-      <ParallaxSection imageUrl="/house-painter-interior.png" height="h-[80vh]" overlayOpacity={0.6}>
+      <ParallaxSection imageUrl="/house-painter-interior.png" height="h-screen" overlayOpacity={0.6}>
         <div className="container h-full flex flex-col justify-center items-start">
           <div className="max-w-2xl space-y-4">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
@@ -182,6 +183,7 @@ export default function HomePage() {
                 alt="Interior Painting Project"
                 width={600}
                 height={600}
+                loading="lazy"
                 className="object-cover w-full h-full hover:scale-105 transition-transform duration-300"
               />
             </div>
@@ -191,6 +193,7 @@ export default function HomePage() {
                 alt="Exterior Painting Project"
                 width={600}
                 height={600}
+                loading="lazy"
                 className="object-cover w-full h-full hover:scale-105 transition-transform duration-300"
               />
             </div>
@@ -200,6 +203,7 @@ export default function HomePage() {
                 alt="Cabinet Painting Project"
                 width={600}
                 height={600}
+                loading="lazy"
                 className="object-cover w-full h-full hover:scale-105 transition-transform duration-300"
               />
             </div>
@@ -267,7 +271,7 @@ export default function HomePage() {
             <div>
               <h3 className="text-2xl font-bold mb-6">Our Service Area</h3>
               <div className="h-[400px] mb-6">
-                <GoogleMapComponent />
+                <GoogleMapWrapper />
               </div>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">

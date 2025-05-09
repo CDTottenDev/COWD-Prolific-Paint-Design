@@ -5,7 +5,7 @@ import "./globals.css"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import { ThemeProvider } from "next-themes"
-
+import { ClerkProvider } from "@clerk/nextjs"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
@@ -20,6 +20,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
+    <ClerkProvider>
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
@@ -31,5 +32,6 @@ export default function RootLayout({
         </ThemeProvider>
       </body>
     </html>
+    </ClerkProvider>
   )
 }
