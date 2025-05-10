@@ -27,13 +27,23 @@ export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section with Parallax */}
-      <ParallaxSection imageUrl="/house-painter-interior.png" height="h-screen" overlayOpacity={0.6}>
-        <div className="container h-full flex flex-col justify-center items-start">
-          <div className="max-w-2xl space-y-4">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
+      <div 
+        className="w-full h-screen flex flex-col justify-center"
+        style={{
+          backgroundImage: "url('/paint splash full.jpeg')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          width: '100vw',
+          maxWidth: '100%'
+        }}
+      >
+        <div className="container mx-auto">
+          <div className="max-w-2xl bg-white/60 backdrop-blur-sm p-4 rounded-lg space-y-4">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black">
               Professional <span className="text-gold">Painting</span> & Contracting Services
             </h1>
-            <p className="text-lg md:text-xl text-white/90">
+            <p className="text-lg md:text-xl text-black/90">
               Transform your home with Bend's premier painting and contracting service. Quality work, competitive
               prices, and excellent customer service.
             </p>
@@ -41,13 +51,13 @@ export default function HomePage() {
               <Button asChild size="lg" className="bg-gold hover:bg-gold/90 text-black">
                 <Link href="/quote">Get a Free Quote</Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
+              <Button asChild variant="outline" size="lg" className="border-black text-black hover:bg-black/10">
                 <Link href="/gallery">View Our Work</Link>
               </Button>
             </div>
           </div>
         </div>
-      </ParallaxSection>
+      </div>
 
       {/* Services Overview */}
       <section className="py-16 bg-white">

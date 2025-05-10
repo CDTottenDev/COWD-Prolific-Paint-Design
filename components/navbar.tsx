@@ -14,29 +14,38 @@ export default function Navbar() {
   }
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-black text-white">
-      <div className="container flex h-16 items-center justify-between">
-        <Link href="/" className="flex items-center gap-2">
-          <span className="text-xl font-bold text-gold">
-            Prolific Paint <span className="text-white">@</span> Design
-          </span>
-        </Link>
-        <nav className="hidden md:flex gap-6">
-          <Link href="/" className="text-sm font-medium hover:text-gold transition-colors">
-            Home
+    <header className="sticky top-0 z-50 w-full border-b bg-white text-black">
+      <div className="container flex h-16 items-center justify-between px-4">
+        <div className="flex items-center">
+          <Link href="/" className="flex items-center gap-3">
+            <img 
+              src="/FullLogo-1300x1024 light theme.svg" 
+              alt="Prolific Paint & Design Logo" 
+              className="h-16 w-auto"
+            />
+            <span className="text-xl font-bold text-gold">
+              Prolific Paint & Design
+            </span>
           </Link>
-          <Link href="/about" className="text-sm font-medium hover:text-gold transition-colors">
-            About Us
-          </Link>
-          <Link href="/services" className="text-sm font-medium hover:text-gold transition-colors">
-            Services
-          </Link>
-          <Link href="/gallery" className="text-sm font-medium hover:text-gold transition-colors">
-            Gallery
-          </Link>
-          <Link href="/contact" className="text-sm font-medium hover:text-gold transition-colors">
-            Contact
-          </Link>
+        </div>
+        <nav className="hidden md:flex items-center justify-center flex-1 mx-8">
+          <div className="flex gap-8">
+            <Link href="/" className="text-sm font-medium hover:text-gold transition-colors">
+              Home
+            </Link>
+            <Link href="/about" className="text-sm font-medium hover:text-gold transition-colors">
+              About Us
+            </Link>
+            <Link href="/services" className="text-sm font-medium hover:text-gold transition-colors">
+              Services
+            </Link>
+            <Link href="/gallery" className="text-sm font-medium hover:text-gold transition-colors">
+              Gallery
+            </Link>
+            <Link href="/contact" className="text-sm font-medium hover:text-gold transition-colors">
+              Contact
+            </Link>
+          </div>
         </nav>
         <div className="hidden md:block">
           <Button asChild variant="outline" className="border-gold text-gold hover:bg-gold hover:text-black">
