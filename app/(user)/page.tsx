@@ -145,13 +145,13 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="flex flex-col lg:flex-row justify-between items-start gap-4 sm:gap-8 max-w-7xl mx-auto">
-            {/* Left side cards - horizontal on mobile */}
-            <div className="flex flex-row lg:flex-col gap-4 sm:gap-6 w-full lg:w-[300px]">
-              <Card className="text-black border-black/50 border-2 backdrop-blur-sm flex-1 h-full">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto w-full">
+            {/* Left side cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 sm:gap-6">
+              <Card className="text-black border-black/50 border-2 flex-1 h-full transform transition-transform hover:scale-[1.02]">
                 <CardContent className="p-4 sm:p-6 text-center h-full flex flex-col justify-between">
                   <div>
-                    <div className="rounded-full p-2 sm:p-3 w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 flex items-center justify-center">
+                    <div className="rounded-full p-2 sm:p-3 w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 flex items-center justify-center bg-[rgb(var(--color-background-2))]">
                       <Star className="h-6 w-6 sm:h-8 sm:w-8" />
                     </div>
                     <h3 className="text-lg sm:text-xl font-bold mb-2">Experience</h3>
@@ -162,10 +162,10 @@ export default function HomePage() {
                 </CardContent>
               </Card>
 
-              <Card className="text-black border-black/50 border-2 backdrop-blur-sm flex-1 h-full">
+              <Card className="text-black border-black/50 border-2 flex-1 h-full transform transition-transform hover:scale-[1.02]">
                 <CardContent className="p-4 sm:p-6 text-center h-full flex flex-col justify-between">
                   <div>
-                    <div className="rounded-full p-2 sm:p-3 w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 flex items-center justify-center">
+                    <div className="rounded-full p-2 sm:p-3 w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 flex items-center justify-center bg-[rgb(var(--color-background-2))]">
                       <Ruler className="h-6 w-6 sm:h-8 sm:w-8" />
                     </div>
                     <h3 className="text-lg sm:text-xl font-bold mb-2">Quality</h3>
@@ -176,8 +176,8 @@ export default function HomePage() {
             </div>
 
             {/* Middle content */}
-            <div className="flex-1 max-w-2xl mx-auto text-center my-auto">
-              <div className="bg-black/20 border border-gold/20 backdrop-blur-sm rounded-lg p-6 sm:p-8">
+            <div className="max-w-2xl mx-auto text-center my-auto order-first lg:order-none">
+              <div className="bg-black/20 border border-gold/20 rounded-lg p-6 sm:p-8 shadow-lg">
                 <h3 className="text-xl sm:text-2xl font-bold mb-4">Our Commitment to Excellence</h3>
                 <p className="mb-6 text-sm sm:text-base">
                   At <span className="text-[rgb(var(--color-text-emphasized))]">Prolific Paint @ Design</span>, we believe in delivering exceptional results through our dedication to quality craftsmanship and customer satisfaction. Our team of experienced professionals ensures that every project receives the attention to detail it deserves.
@@ -188,12 +188,12 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right side cards - horizontal on mobile */}
-            <div className="flex flex-row lg:flex-col gap-4 sm:gap-6 w-full lg:w-[300px]">
-              <Card className="text-black border-black/50 border-2 backdrop-blur-sm flex-1 h-full">
-                <CardContent className="p-4 sm:p-6  text-center h-full flex flex-col justify-between">
+            {/* Right side cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 sm:gap-6">
+              <Card className="text-black border-black/50 border-2 flex-1 h-full transform transition-transform hover:scale-[1.02]">
+                <CardContent className="p-4 sm:p-6 text-center h-full flex flex-col justify-between">
                   <div>
-                    <div className="rounded-full p-2 sm:p-3 w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 flex items-center justify-center">
+                    <div className="rounded-full p-2 sm:p-3 w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 flex items-center justify-center bg-[rgb(var(--color-background-2))]">
                       <Phone className="h-6 w-6 sm:h-8 sm:w-8" />
                     </div>
                     <h3 className="text-lg sm:text-xl font-bold mb-2">Service</h3>
@@ -204,10 +204,10 @@ export default function HomePage() {
                 </CardContent>
               </Card>
 
-              <Card className="text-black border-black/50 border-2 backdrop-blur-sm flex-1 h-full">
+              <Card className="text-black border-black/50 border-2 flex-1 h-full transform transition-transform hover:scale-[1.02]">
                 <CardContent className="p-4 sm:p-6 text-center h-full flex flex-col justify-between">
                   <div>
-                    <div className="rounded-full p-2 sm:p-3 w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 flex items-center justify-center">
+                    <div className="rounded-full p-2 sm:p-3 w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 flex items-center justify-center bg-[rgb(var(--color-background-2))]">
                       <Hammer className="h-6 w-6 sm:h-8 sm:w-8" />
                     </div>
                     <h3 className="text-lg sm:text-xl font-bold mb-2">Licensed</h3>
