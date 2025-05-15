@@ -13,20 +13,46 @@ import { CheckCircle, Upload } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const services = [
-  { id: "interior-painting", label: "Interior Painting" },
-  { id: "exterior-painting", label: "Exterior Painting" },
+  // Painting Services
+  { id: "residential-interior", label: "Residential Interior Painting" },
+  { id: "residential-exterior", label: "Residential Exterior Painting" },
+  { id: "commercial-interior", label: "Commercial Interior Painting" },
+  { id: "commercial-exterior", label: "Commercial Exterior Painting" },
   { id: "cabinet-painting", label: "Cabinet Painting" },
   { id: "deck-staining", label: "Deck Staining" },
+  { id: "faux-finishes", label: "Faux Finishes" },
+  { id: "wood-finishes", label: "Interior/Exterior Wood Finishes" },
+  
+  // Carpentry Services
+  { id: "trim-work", label: "Trim Work" },
+  { id: "flooring", label: "Flooring" },
+  { id: "wood-accents", label: "Wood Wall Accents" },
+  { id: "siding", label: "Siding" },
+  
+  // Other Services
+  { id: "power-washing", label: "Power Washing" },
+  { id: "junk-removal", label: "Junk Removal" },
+  { id: "snow-removal", label: "Snow Removal" },
   { id: "drywall-repair", label: "Drywall Repair" },
-  { id: "carpentry", label: "Carpentry" },
   { id: "other", label: "Other Services" },
 ]
 
 export default function QuoteForm() {
-  const [serviceType, setServiceType] = useState<string>("painting")
+  const [serviceTypes, setServiceTypes] = useState<{ [key: string]: boolean }>({
+    residential: true,
+    commercial: false,
+    contracting: false,
+  })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [files, setFiles] = useState<File[]>([])
+
+  const handleServiceTypeChange = (type: string) => {
+    setServiceTypes(prev => ({
+      ...prev,
+      [type]: !prev[type]
+    }))
+  }
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
@@ -50,7 +76,7 @@ export default function QuoteForm() {
       <div className="flex flex-col items-center justify-center p-6 text-center">
         <CheckCircle className="h-16 w-16 text-gold mb-4" />
         <h3 className="text-xl font-bold mb-2">Quote Request Received!</h3>
-        <p className="text-gray-600 dark:text-gray-400 mb-4">
+        <p className="text-gray-600 mb-4">
           Thank you for your quote request. We'll review your project details and get back to you with a personalized
           quote as soon as possible.
         </p>
@@ -91,19 +117,35 @@ export default function QuoteForm() {
 
       <div className="space-y-4">
         <h3 className="text-lg font-medium">Service Type</h3>
-        <RadioGroup defaultValue="painting" onValueChange={setServiceType}>
+        <div className="space-y-2">
           <div className="flex items-center space-x-2">
-            <RadioGroupItem value="painting" id="painting" />
-            <Label htmlFor="painting">Residential Painting</Label>
+            <Checkbox 
+              id="residential" 
+              checked={serviceTypes.residential}
+              onCheckedChange={() => handleServiceTypeChange('residential')}
+            />
+            <Label htmlFor="residential">Residential Painting</Label>
           </div>
           <div className="flex items-center space-x-2">
-            <RadioGroupItem value="contracting" id="contracting" />
+            <Checkbox 
+              id="commercial" 
+              checked={serviceTypes.commercial}
+              onCheckedChange={() => handleServiceTypeChange('commercial')}
+            />
+            <Label htmlFor="commercial">Commercial Painting</Label>
+          </div>
+          <div className="flex items-center space-x-2">
+            <Checkbox 
+              id="contracting" 
+              checked={serviceTypes.contracting}
+              onCheckedChange={() => handleServiceTypeChange('contracting')}
+            />
             <Label htmlFor="contracting">Other Contracting Services</Label>
           </div>
-        </RadioGroup>
+        </div>
       </div>
 
-      {serviceType === "painting" && (
+      {(serviceTypes.residential || serviceTypes.commercial) && (
         <div className="space-y-4">
           <h3 className="text-lg font-medium">Painting Details</h3>
           <div className="space-y-2">
@@ -113,7 +155,7 @@ export default function QuoteForm() {
           <div className="space-y-2">
             <Label>Services Needed (Select all that apply)</Label>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-              {services.slice(0, 5).map((service) => (
+              {services.slice(0, 8).map((service) => (
                 <div key={service.id} className="flex items-center space-x-2">
                   <Checkbox id={service.id} />
                   <Label htmlFor={service.id}>{service.label}</Label>
@@ -124,13 +166,13 @@ export default function QuoteForm() {
         </div>
       )}
 
-      {serviceType === "contracting" && (
+      {serviceTypes.contracting && (
         <div className="space-y-4">
           <h3 className="text-lg font-medium">Contracting Details</h3>
           <div className="space-y-2">
             <Label>Services Needed (Select all that apply)</Label>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-              {services.slice(4).map((service) => (
+              {services.slice(8).map((service) => (
                 <div key={service.id} className="flex items-center space-x-2">
                   <Checkbox id={service.id} />
                   <Label htmlFor={service.id}>{service.label}</Label>
@@ -181,21 +223,21 @@ export default function QuoteForm() {
               className="hidden"
               onChange={handleFileChange}
             />
-            <Upload className="h-10 w-10 text-gray-400 mb-2" />
-            <p className="text-sm text-center text-gray-600 dark:text-gray-400">
+            <Upload className="h-10 w-10 text-black mb-2" />
+            <p className="text-sm text-center">
               {files.length > 0
                 ? `${files.length} file${files.length > 1 ? "s" : ""} selected`
                 : "Drag and drop files here or click to browse"}
             </p>
-            <p className="text-xs text-center text-gray-500 mt-1">
+            <p className="text-xs text-center mt-1">
               Upload photos of the area to help us provide a more accurate quote
             </p>
           </div>
         </div>
       </div>
 
-      <Button type="submit" disabled={isSubmitting} className="w-full bg-gold hover:bg-gold/90 text-black">
-        {isSubmitting ? "Submitting..." : "Request Quote"}
+      <Button type="submit" disabled={isSubmitting} className="w-full bg-[rgb(var(--color-button-2nd))] text-white cursor-pointer shadow-lg shadow-white/30 hover:shadow-white/50">
+        {isSubmitting ? "Submitting..." : "Click Here to Send Request Quote"}
       </Button>
     </form>
   )

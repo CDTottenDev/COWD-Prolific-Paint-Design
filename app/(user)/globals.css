@@ -1,26 +1,100 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Base colors */
+  --color-background: 255, 250, 240;  /* #FFFAF0 */
+  --color-background-2: 255, 255, 255;  /* #FFFFFF */
+  --color-background-3: 242, 254, 255;  /* rgb(242 254 255) */
+  --color-text: 0, 0, 0;          /* #000000 */
+  --color-text-2: 255, 255, 255;  /* #FFFFFF */
+  --color-muted: 123, 123, 123;   /* #7b7b7b */
+
+  /* Primary colors */
+  --color-primary: 79, 70, 229;   /* #4F46E5 - Indigo */
+  --color-primary-light: 129, 140, 248; /* #818CF8 */
+  --color-primary-dark: 49, 46, 129;   /* #312E81 */
+
+  /* Secondary colors */
+  --color-secondary: 236, 72, 153; /* #EC4899 - Pink */
+  --color-secondary-light: 244, 114, 182; /* #F472B6 */
+  --color-secondary-dark: 190, 24, 93;   /* #BE185D */
+
+  /* Accent colors */
+  --color-accent: 16, 185, 129;   /* #10B981 - Emerald */
+  --color-accent-light: 52, 211, 153; /* #34D399 */
+  --color-accent-dark: 6, 95, 70;    /* #065F46 */
+
+  /* UI Element colors */
+  --color-card: 255, 255, 255;    /* #FFFFFF */
+  --color-card-2: 0, 0, 0;  /* #000000 */
+  --color-card-3: 154, 231 , 255;  /* rgb(154 231 255) */
+  --color-card-hover: 249, 250, 251; /* #F9FAFB */
+  --color-border: 229, 231, 235;  /* #E5E7EB */
+  --color-button: 231, 0, 0;    /* rgb(231, 0, 0) */
+  --color-button-text: 255, 255, 255; /* #FFFFFF */
+  --color-button-hover: 94, 40, 40; /* #5E2828 */
+  --color-error: 239, 68, 68;     /* #EF4444 */
+  --color-success: 34, 197, 94;   /* #22C55E */
+  --color-warning: 234, 179, 8;   /* #EAB308 */
+  --color-info: 59, 130, 246;     /* #3B82F6 */
+  --color-button-border: 56, 54, 54;  /* #383636 */
+  --color-logo: 255, 250, 240;  /* #FFFAF0 */
+  --color-button-2nd: 65, 175, 226;  /* rgb(65 175 226) */
+  --color-button-2nd-hover: 100, 200, 250;  /* rgb(100 200 250) */
+
+  /* custom colors */
+  --color-text-emphasized: 9 52 172;  /* rgb(9 52 172) */
+  --color-text-emphasized-hover: 190, 28, 28;  /* rgb(190 28 28) */
+  --color-text-emphasized-2: 236, 225, 225;  /* rgb(236 225 225) */
+  --color-shadow: 128, 107, 126;  /* rgb(1 107 126) */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+.dark {
+  /* Base colors */
+  --color-background: 55, 59, 65;  /* #373B41 */
+  --color-background-2: 139, 139, 139;  /* rgb(139, 139, 139) */
+  --color-background-3: 198, 204, 107;  /* rgb(198 204 107) */
+  --color-text: 255, 255, 255;    /* #ffffff */
+  --color-text-2: 0, 0, 0;  /* #000000 */
+  --color-muted: 123, 123, 123;   /* #7b7b7b */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+  /* Primary colors */
+  --color-primary: 129, 140, 248; /* #818CF8 - Lighter Indigo */
+  --color-primary-light: 165, 180, 252; /* #A5B4FC */
+  --color-primary-dark: 79, 70, 229;   /* #4F46E5 */
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* Secondary colors */
+  --color-secondary: 244, 114, 182; /* #F472B6 - Lighter Pink */
+  --color-secondary-light: 251, 182, 209; /* #FBCFE8 */
+  --color-secondary-dark: 236, 72, 153;   /* #EC4899 */
+
+  /* Accent colors */
+  --color-accent: 52, 211, 153;   /* #34D399 - Lighter Emerald */
+  --color-accent-light: 110, 231, 183; /* #6EE7B7 */
+  --color-accent-dark: 16, 185, 129;   /* #10B981 */
+
+  /* UI Element colors */
+  --color-card: 31, 41, 55;       /* #1F2937 */
+  --color-card-2: 221, 221, 221;  /* rgb(221, 221, 221) */
+  --color-card-3: 196, 199, 0;  /* rgb(196 199 0) */
+  --color-card-hover: 17, 24, 39; /* #111827 */
+  --color-border: 55, 65, 81;     /* #374151 */
+  --color-button: 185, 44, 44;  /* rgb(185, 44, 44) */
+  --color-button-hover: 175, 110, 110; /* rgb(175, 110, 110) */
+  --color-button-text: 0, 0, 0; /* #000000 */
+  --color-error: 248, 113, 113;   /* #F87171 */
+  --color-success: 74, 222, 128;  /* #4ADE80 */
+  --color-warning: 250, 204, 21;  /* #FACC15 */
+  --color-info: 96, 165, 250;     /* #60A5FA */
+  --color-button-border: 255 62 62;  /* rgb(255 62 62) */
+
+  --color-button-2nd: 23, 124, 172;  /* rgb(23 124 172) */
+
+  /* custom colors */
+  --color-logo: 255, 255, 255;  /* rgb(255, 255, 255) */
+  --color-text-emphasized: 255, 238, 0;  /* rgb(255 238 0) */
+  --color-text-emphasized-hover: 255, 7, 7;  /* rgb(255 7 7) */
+  --color-text-emphasized-2: 187, 177, 177;  /* rgb(187 177 177) */
+  --color-shadow: 111, 181, 199;  /* rgb(111 181 199) */
 }

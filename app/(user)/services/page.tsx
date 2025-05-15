@@ -1,72 +1,61 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import ParallaxSection from "@/components/parallax-section"
 import { CheckCircle } from "lucide-react"
+import { Card } from "@/components/ui/card"
 
 export default function ServicesPage() {
   return (
-    <div className="flex flex-col min-h-screen">
-      {/* Hero Section with Parallax */}
-      <ParallaxSection
-        imageUrl="/placeholder.svg?height=1080&width=1920&query=professional painters working on a house, high quality"
-        height="h-[50vh]"
-        overlayOpacity={0.6}
-      >
-        <div className="container h-full flex flex-col justify-center items-start">
-          <div className="max-w-2xl space-y-4">
-            <h1 className="text-4xl md:text-5xl font-bold text-white">
-              Our <span className="text-gold">Services</span>
-            </h1>
-            <p className="text-lg text-white/90">
-              Comprehensive painting and contracting services for homeowners, contractors, and realtors throughout
-              Central Oregon.
-            </p>
-          </div>
+    <div className="flex flex-col min-h-screen w-full bg-[rgb(var(--color-background))]">
+      {/* Hero Section */}
+      <div className="container mx-auto px-4 h-full flex w-full items-center justify-center text-center py-24">
+        <div className="max-w-2xl space-y-4">
+          <h1 className="text-4xl md:text-5xl font-bold">
+            Our <span className="text-[rgb(var(--color-text-emphasized))]">Services</span>
+          </h1>
+          <p className="text-lg">
+            Comprehensive painting and contracting services for homeowners, contractors, and realtors throughout
+            Central Oregon.
+          </p>
         </div>
-      </ParallaxSection>
-
+      </div>
       {/* Services Introduction */}
-      <section className="py-16 bg-white">
-        <div className="container">
+      <section className="py-12 bg-[rgb(var(--color-background))]">
+        <div className="container mx-auto px-4">
           <div className="text-center mb-12 max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Professional Painting & Contracting</h2>
             <p className="text-muted-foreground">
-              At Prolific Paint @ Design, we offer a wide range of residential painting and contracting services.
-              Whether you need interior or exterior painting, cabinet refinishing, or other home improvement services,
-              our experienced team delivers quality results that exceed expectations.
+              At <span className="text-[rgb(var(--color-text-emphasized))]">Prolific Paint & Design</span>, we offer comprehensive residential and small commercial painting and contracting services.
+              From interior and exterior painting to carpentry and power washing, our experienced team delivers quality results
+              that exceed expectations.
             </p>
           </div>
         </div>
       </section>
 
       {/* Interior Painting */}
-      <section className="py-16 bg-gray-50">
-        <div className="container">
+      <section className="py-16 bg-[rgb(var(--color-background-2))] border-y border-gray-200 border-solid">
+        <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <Image
-                src="/placeholder.svg?height=800&width=800&query=interior of a modern living room being painted, high quality"
+                src="/assets/projects/desktop/job-4/4-1.jpeg"
                 alt="Interior Painting Services"
-                width={800}
-                height={800}
+                width={600}
+                height={400}
                 className="rounded-lg shadow-lg"
               />
             </div>
             <div className="space-y-6">
               <h2 className="text-3xl font-bold">Interior Painting</h2>
               <p className="text-muted-foreground">
-                Transform your home's interior with our professional painting services. We use premium paints and expert
-                techniques to deliver beautiful, long-lasting results.
+                Transform your space with our professional interior painting services for both residential and small commercial properties.
+                We use premium paints and expert techniques to deliver beautiful, long-lasting results.
               </p>
-              <div className="space-y-3">
+              <div className="space-y-3 flex flex-col items-center">
                 <div className="flex items-start gap-2">
                   <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
-                  <span>Wall painting and touch-ups</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
-                  <span>Ceiling painting</span>
+                  <span>Wall painting</span>
                 </div>
                 <div className="flex items-start gap-2">
                   <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
@@ -74,7 +63,11 @@ export default function ServicesPage() {
                 </div>
                 <div className="flex items-start gap-2">
                   <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
-                  <span>Accent walls and special finishes</span>
+                  <span>Doors and cabinets</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
+                  <span>Faux finishes</span>
                 </div>
                 <div className="flex items-start gap-2">
                   <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
@@ -82,7 +75,7 @@ export default function ServicesPage() {
                 </div>
               </div>
               <div className="pt-4">
-                <Button asChild className="bg-gold hover:bg-gold/90 text-black">
+                <Button asChild className="bg-[rgb(var(--color-button-2nd))] hover:bg-[rgb(var(--color-button-2nd-hover))] text-black hover:border-white hover:border-1 text-lg shadow-lg shadow-[rgb(var(--color-shadow))]">
                   <Link href="/quote">Get a Quote</Link>
                 </Button>
               </div>
@@ -92,28 +85,23 @@ export default function ServicesPage() {
       </section>
 
       {/* Exterior Painting */}
-      <section className="py-16 bg-white">
-        <div className="container">
+      <section className="py-16 bg-[rgb(var(--color-background))]">
+        <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="order-2 lg:order-1 space-y-6">
+            <div className="order-2 lg:order-1 space-y-6 text-right">
               <h2 className="text-3xl font-bold">Exterior Painting</h2>
               <p className="text-muted-foreground">
-                Enhance your home's curb appeal and protect it from the elements with our professional exterior painting
-                services. We use high-quality, weather-resistant paints that stand up to Central Oregon's diverse
-                climate.
+                Enhance your property's curb appeal and protect it from the elements with our professional exterior painting
+                services. We use high-quality, weather-resistant paints that stand up to Central Oregon's diverse climate.
               </p>
-              <div className="space-y-3">
+              <div className="space-y-3 flex flex-col items-center">
                 <div className="flex items-start gap-2">
                   <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
                   <span>House painting (all siding types)</span>
                 </div>
                 <div className="flex items-start gap-2">
                   <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
-                  <span>Trim and fascia</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
-                  <span>Doors and windows</span>
+                  <span>Stucco and brick surfaces</span>
                 </div>
                 <div className="flex items-start gap-2">
                   <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
@@ -121,18 +109,22 @@ export default function ServicesPage() {
                 </div>
                 <div className="flex items-start gap-2">
                   <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
+                  <span>Trim and fascia</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
                   <span>Garages and outbuildings</span>
                 </div>
               </div>
               <div className="pt-4">
-                <Button asChild className="bg-gold hover:bg-gold/90 text-black">
+                <Button asChild className="bg-[rgb(var(--color-button-2nd))] hover:bg-[rgb(var(--color-button-2nd-hover))] text-black hover:border-white hover:border-1 text-lg shadow-lg shadow-[rgb(var(--color-shadow))]">
                   <Link href="/quote">Get a Quote</Link>
                 </Button>
               </div>
             </div>
             <div className="order-1 lg:order-2">
               <Image
-                src="/placeholder.svg?height=800&width=800&query=exterior of a house being painted blue, high quality"
+                src="/assets/projects/desktop/job-2/2-af-2.jpg"
                 alt="Exterior Painting Services"
                 width={800}
                 height={800}
@@ -144,15 +136,15 @@ export default function ServicesPage() {
       </section>
 
       {/* Cabinet Refinishing */}
-      <section className="py-16 bg-gray-50">
-        <div className="container">
+      <section className="py-16 bg-[rgb(var(--color-background-2))] border-y border-gray-200 border-solid">
+        <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <Image
-                src="/placeholder.svg?height=800&width=800&query=kitchen with white cabinets being painted, high quality"
+                src="/assets/projects/desktop/job-4/4-4.jpeg"
                 alt="Cabinet Refinishing Services"
-                width={800}
-                height={800}
+                width={600}
+                height={400}
                 className="rounded-lg shadow-lg"
               />
             </div>
@@ -162,7 +154,7 @@ export default function ServicesPage() {
                 Give your kitchen or bathroom a fresh new look without the cost of full replacement. Our cabinet
                 refinishing services can transform your space at a fraction of the cost of new cabinets.
               </p>
-              <div className="space-y-3">
+              <div className="space-y-3 flex flex-col items-center">
                 <div className="flex items-start gap-2">
                   <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
                   <span>Kitchen cabinet painting</span>
@@ -185,7 +177,7 @@ export default function ServicesPage() {
                 </div>
               </div>
               <div className="pt-4">
-                <Button asChild className="bg-gold hover:bg-gold/90 text-black">
+                <Button asChild className="bg-[rgb(var(--color-button-2nd))] hover:bg-[rgb(var(--color-button-2nd-hover))] text-black hover:border-white hover:border-1 text-lg shadow-lg shadow-[rgb(var(--color-shadow))]">
                   <Link href="/quote">Get a Quote</Link>
                 </Button>
               </div>
@@ -195,9 +187,9 @@ export default function ServicesPage() {
       </section>
 
       {/* Additional Services */}
-      <section className="py-16 bg-white">
-        <div className="container">
-          <div className="text-center mb-12">
+      <section className="py-48 bg-[rgb(var(--color-background))]">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center mb-6 sm:mb-12 bg-[rgb(var(--color-background-2))] rounded-full p-3 sm:p-4 border-x border-gray-500 border-solid shadow-lg">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Additional Services</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Beyond painting, we offer a variety of other residential contracting services to help with all your home
@@ -205,144 +197,135 @@ export default function ServicesPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-gray-50 p-6 rounded-lg border">
-              <h3 className="text-xl font-bold mb-3">Deck Staining & Sealing</h3>
-              <p className="text-muted-foreground mb-4">
-                Protect and beautify your outdoor living spaces with our professional deck staining and sealing
-                services.
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+            <div className="bg-[rgb(var(--color-background-3))] p-6 rounded-lg border text-black/80 shadow-md shadow-[rgb(var(--color-shadow))]">
+              <h3 className="text-xl font-bold mb-3 text-center">Carpentry Services</h3>
+              <p className="text-muted-foreground mb-4 text-center">
+                Professional carpentry services for all your home improvement needs.
               </p>
-              <ul className="space-y-2 mb-6">
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
-                  <span>Deck cleaning and preparation</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
-                  <span>Staining and sealing</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
-                  <span>Waterproofing</span>
-                </li>
-              </ul>
+              <div className="flex flex-col-2 justify-center gap-4 mb-6">
+                <div className="space-y-2">
+                  <div className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
+                    <span>Trim installation and repair</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
+                    <span>Floor installation and repair</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
+                    <span>Wood wall accents</span>
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <div className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
+                    <span>Trim wall accents</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
+                    <span>Siding installation and repair</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div className="bg-gray-50 p-6 rounded-lg border">
-              <h3 className="text-xl font-bold mb-3">Drywall Repair</h3>
-              <p className="text-muted-foreground mb-4">
-                From small holes to major damage, our drywall repair services will make your walls look like new again.
+            <div className="bg-[rgb(var(--color-background-3))] p-6 rounded-lg border text-black/80 shadow-md shadow-[rgb(var(--color-shadow))]">
+              <h3 className="text-xl font-bold mb-3 text-center">Power Washing</h3>
+              <p className="text-muted-foreground mb-4 text-center">
+                Professional power washing services for all types of surfaces.
               </p>
-              <ul className="space-y-2 mb-6">
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
-                  <span>Patch holes and cracks</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
-                  <span>Water damage repair</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
-                  <span>Texture matching</span>
-                </li>
-              </ul>
+              <div className="flex flex-col-2 justify-center gap-4 mb-6">
+                <div className="space-y-2">
+                  <div className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
+                    <span>All substrate types</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
+                    <span>House siding</span>
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <div className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
+                    <span>Decks and patios</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
+                    <span>Driveways and walkways</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div className="bg-gray-50 p-6 rounded-lg border">
-              <h3 className="text-xl font-bold mb-3">Carpentry</h3>
-              <p className="text-muted-foreground mb-4">
-                Our carpentry services can help with various home improvement projects, from trim work to custom
-                shelving.
+            <div className="bg-[rgb(var(--color-background-3))] p-6 rounded-lg border text-black/80 shadow-md shadow-[rgb(var(--color-shadow))]">
+              <h3 className="text-xl font-bold mb-3 text-center">Junk & Snow Removal</h3>
+              <p className="text-muted-foreground mb-4 text-center">
+                Keep your property clean and safe with our junk and snow removal services.
               </p>
-              <ul className="space-y-2 mb-6">
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
-                  <span>Trim and molding installation</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
-                  <span>Door installation and repair</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
-                  <span>Custom shelving</span>
-                </li>
-              </ul>
+              <div className="flex flex-col-2 justify-center gap-4 mb-6">
+                <div className="space-y-2">
+                  <div className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
+                    <span>Residential junk removal</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
+                    <span>Construction debris removal</span>
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <div className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
+                    <span>Snow removal services</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
+                    <span>Property cleanup</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div className="bg-gray-50 p-6 rounded-lg border">
-              <h3 className="text-xl font-bold mb-3">Pressure Washing</h3>
-              <p className="text-muted-foreground mb-4">
-                Restore the beauty of your home's exterior surfaces with our professional pressure washing services.
+            <div className="bg-[rgb(var(--color-background-3))] p-6 rounded-lg border text-black/80 shadow-md shadow-[rgb(var(--color-shadow))]">
+              <h3 className="text-xl font-bold mb-3 text-center">Wood Finishing</h3>
+              <p className="text-muted-foreground mb-4 text-center">
+                Professional wood finishing services for both interior and exterior surfaces. We use high-quality stains,
+                lacquers, and varnishes to protect and enhance the natural beauty of wood.
               </p>
-              <ul className="space-y-2 mb-6">
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
-                  <span>House siding</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
-                  <span>Decks and patios</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
-                  <span>Driveways and walkways</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="bg-gray-50 p-6 rounded-lg border">
-              <h3 className="text-xl font-bold mb-3">Wallpaper Removal</h3>
-              <p className="text-muted-foreground mb-4">
-                Say goodbye to outdated wallpaper with our professional removal services that leave your walls ready for
-                a fresh coat of paint.
-              </p>
-              <ul className="space-y-2 mb-6">
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
-                  <span>Safe and efficient removal</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
-                  <span>Wall preparation</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
-                  <span>Surface repair</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="bg-gray-50 p-6 rounded-lg border">
-              <h3 className="text-xl font-bold mb-3">Color Consultation</h3>
-              <p className="text-muted-foreground mb-4">
-                Not sure which colors will work best in your space? Our color consultation services can help you make
-                the perfect choice.
-              </p>
-              <ul className="space-y-2 mb-6">
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
-                  <span>Professional color advice</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
-                  <span>Sample testing</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
-                  <span>Color scheme development</span>
-                </li>
-              </ul>
+              <div className="flex flex-col-2 justify-center gap-4 mb-6">
+                <div className="space-y-2">
+                  <div className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
+                    <span>Interior wood staining</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
+                    <span>Exterior wood protection</span>
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <div className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
+                    <span>Lacquer and varnish application</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
+                    <span>All substrate types</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Our Process */}
-      <section className="py-16 bg-gray-50">
-        <div className="container">
-          <div className="text-center mb-12">
+      <section className="py-36 bg-[rgb(var(--color-background-2))] border-y border-gray-200 border-solid">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center mb-6 sm:mb-12 bg-[rgb(var(--color-background-2))] rounded-full p-3 sm:p-4 border-x border-gray-500 border-solid shadow-lg">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Process</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               We follow a proven process to ensure every project is completed to the highest standards and your complete
@@ -350,61 +333,90 @@ export default function ServicesPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white p-6 rounded-lg border relative">
-              <div className="absolute -top-4 -left-4 w-10 h-10 rounded-full bg-gold text-black flex items-center justify-center font-bold text-lg">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+            <Card className="border-black/50 border-2 backdrop-blur-sm flex-1 h-full relative">
+              <div className="absolute -top-1 -left-1 w-10 h-10 text-[rgb(var(--color-text-2))] rounded-full bg-[rgb(var(--color-text-emphasized))] flex items-center justify-center font-bold text-lg">
                 1
               </div>
-              <h3 className="text-xl font-bold mb-3 pt-2">Consultation</h3>
-              <p className="text-muted-foreground">
-                We start with a thorough consultation to understand your needs, preferences, and project requirements.
-              </p>
-            </div>
+              <div className="p-4 sm:p-6 text-black text-center h-full flex flex-col justify-between">
+                <div>
+                  <h3 className="text-xl font-bold mb-3 pt-2">Initial Contact</h3>
+                  <p className="text-muted-foreground">
+                    Reach out via phone call, text, or email to request a free estimate. We'll respond within 24 hours to schedule a time that works for you.
+                  </p>
+                </div>
+              </div>
+            </Card>
 
-            <div className="bg-white p-6 rounded-lg border relative">
-              <div className="absolute -top-4 -left-4 w-10 h-10 rounded-full bg-gold text-black flex items-center justify-center font-bold text-lg">
+            <Card className="border-black/50 border-2 backdrop-blur-sm flex-1 h-full relative">
+              <div className="absolute -top-1 -left-1 w-10 h-10 text-[rgb(var(--color-text-2))] rounded-full bg-[rgb(var(--color-text-emphasized))] flex items-center justify-center font-bold text-lg">
                 2
               </div>
-              <h3 className="text-xl font-bold mb-3 pt-2">Estimate</h3>
-              <p className="text-muted-foreground">
-                We provide a detailed, transparent estimate outlining all costs and the scope of work for your project.
-              </p>
-            </div>
+              <div className="p-4 sm:p-6 text-black text-center h-full flex flex-col justify-between">
+                <div>
+                  <h3 className="text-xl font-bold mb-3 pt-2">Project Walkthrough</h3>
+                  <p className="text-muted-foreground">
+                    We'll visit at the scheduled time to walk the project with you, listen to your vision, make product recommendations, and address any problem areas. We'll gather all necessary information for your estimate.
+                  </p>
+                </div>
+              </div>
+            </Card>
 
-            <div className="bg-white p-6 rounded-lg border relative">
-              <div className="absolute -top-4 -left-4 w-10 h-10 rounded-full bg-gold text-black flex items-center justify-center font-bold text-lg">
+            <Card className="border-black/50 border-2 backdrop-blur-sm flex-1 h-full relative">
+              <div className="absolute -top-1 -left-1 w-10 h-10 text-[rgb(var(--color-text-2))] rounded-full bg-[rgb(var(--color-text-emphasized))] flex items-center justify-center font-bold text-lg">
                 3
               </div>
-              <h3 className="text-xl font-bold mb-3 pt-2">Preparation</h3>
-              <p className="text-muted-foreground">
-                We carefully prepare the work area, protecting your furniture, floors, and belongings before starting.
-              </p>
-            </div>
+              <div className="p-4 sm:p-6 text-black text-center h-full flex flex-col justify-between">
+                <div>
+                  <h3 className="text-xl font-bold mb-3 pt-2">Project Confirmation</h3>
+                  <p className="text-muted-foreground">
+                    Once the estimate is agreed upon, a 30-50% deposit secures your materials and guarantees your start date.
+                  </p>
+                </div>
+              </div>
+            </Card>
 
-            <div className="bg-white p-6 rounded-lg border relative">
-              <div className="absolute -top-4 -left-4 w-10 h-10 rounded-full bg-gold text-black flex items-center justify-center font-bold text-lg">
+            <Card className="border-black/50 border-2 backdrop-blur-sm flex-1 h-full relative">
+              <div className="absolute -top-1 -left-1 w-10 h-10 text-[rgb(var(--color-text-2))] rounded-full bg-[rgb(var(--color-text-emphasized))] flex items-center justify-center font-bold text-lg">
                 4
               </div>
-              <h3 className="text-xl font-bold mb-3 pt-2">Completion</h3>
-              <p className="text-muted-foreground">
-                We execute the work with precision, clean up thoroughly, and conduct a final walkthrough to ensure your
-                satisfaction.
-              </p>
-            </div>
+              <div className="p-4 sm:p-6 text-black text-center h-full flex flex-col justify-between">
+                <div>
+                  <h3 className="text-xl font-bold mb-3 pt-2">Transformation</h3>
+                  <p className="text-muted-foreground">
+                    Watch as we transform your space with power washing, proper prep work, and 2 coats of paint (sprayed, brushed, or rolled). We'll clean up thoroughly, leaving everything as if we were never there.
+                  </p>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="border-black/50 border-2 backdrop-blur-sm flex-1 h-full relative">
+              <div className="absolute -top-1 -left-1 w-10 h-10 text-[rgb(var(--color-text-2))] rounded-full bg-[rgb(var(--color-text-emphasized))] flex items-center justify-center font-bold text-lg">
+                5
+              </div>
+              <div className="p-4 sm:p-6 text-black text-center h-full flex flex-col justify-between">
+                <div>
+                  <h3 className="text-xl font-bold mb-3 pt-2">Final Walkthrough</h3>
+                  <p className="text-muted-foreground">
+                    We'll walk through the completed project to discuss the results, your satisfaction level, and any maintenance recommendations. Final invoice will be provided.
+                  </p>
+                </div>
+              </div>
+            </Card>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
       <section className="py-12 bg-black">
-        <div className="container">
+        <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
               <h2 className="text-2xl md:text-3xl font-bold text-white">Ready to start your project?</h2>
               <p className="text-white/80 mt-2">Contact us today for a free, no-obligation quote.</p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button asChild size="lg" className="bg-gold hover:bg-gold/90 text-black">
+              <Button asChild size="lg" className="bg-[rgb(var(--color-button-2nd))] hover:bg-[rgb(var(--color-button-2nd-hover))] text-black hover:border-white hover:border-1 text-lg">
                 <Link href="/quote">Get a Free Quote</Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white/10">

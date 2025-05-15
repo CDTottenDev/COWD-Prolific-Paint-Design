@@ -63,7 +63,7 @@ export default function ContactForm() {
         <Label htmlFor="message">Message</Label>
         <Textarea id="message" placeholder="How can we help you?" rows={5} required />
       </div>
-      <Button type="submit" disabled={isSubmitting} className="w-full bg-gold hover:bg-gold/90 text-black">
+      <Button type="submit" disabled={isSubmitting} className="w-full bg-[rgb(var(--color-button))] hover:bg-[rgb(var(--color-button-hover))] text-[rgb(var(--color-button-text))]">
         {isSubmitting ? "Sending..." : "Send Message"}
       </Button>
     </form>
