@@ -24,6 +24,62 @@ export default function GalleryPage() {
   // Placeholders for your image arrays
   const mobileImages = [
     {
+      src: "/assets/projects/mobile/job-5/5-1.jpeg",
+      alt: "Interior painting project",
+      width: 800,
+      height: 800,
+      category: "interior, carpentry, wood-finishing",
+      jobId: "job-5"
+    },
+    {
+      src: "/assets/projects/mobile/job-5/5-2.jpeg",
+      alt: "Interior painting project",
+      width: 800,
+      height: 800,
+      category: "interior, carpentry, wood-finishing",
+      jobId: "job-5"
+    },
+    {
+      src: "/assets/projects/mobile/job-5/5-3-bf-stairs.jpeg",
+      alt: "Interior painting project",
+      width: 800,
+      height: 800,
+      category: "interior, carpentry, wood-finishing",
+      jobId: "job-5"
+    },
+    {
+      src: "/assets/projects/mobile/job-5/5-4.jpeg",
+      alt: "Interior painting project",
+      width: 800,
+      height: 800,
+      category: "interior, carpentry, wood-finishing",
+      jobId: "job-5"
+    },
+    {
+      src: "/assets/projects/mobile/job-5/5-5.jpeg",
+      alt: "Interior painting project",
+      width: 800,
+      height: 800,
+      category: "interior, carpentry, wood-finishing",
+      jobId: "job-5"
+    },
+    {
+      src: "/assets/projects/mobile/job-5/5-6-af.jpeg",
+      alt: "Interior painting project",
+      width: 800,
+      height: 800,
+      category: "interior, carpentry, wood-finishing",
+      jobId: "job-5"
+    },
+    {
+      src: "/assets/projects/mobile/job-5/5-7-af-stairs.jpeg",
+      alt: "Interior painting project",
+      width: 800,
+      height: 800,
+      category: "interior, carpentry, wood-finishing",
+      jobId: "job-5"
+    },
+    {
       src: "/assets/projects/mobile/job-1/1-af-1.jpeg",
       alt: "Interior painting project",
       width: 800,
@@ -178,6 +234,62 @@ export default function GalleryPage() {
   ]
 
   const desktopImages = [
+    {
+      src: "/assets/projects/desktop/job-5/5-1.jpeg",
+      alt: "Interior painting project",
+      width: 800,
+      height: 800,
+      category: "interior, carpentry, wood-finishing",
+      jobId: "job-5"
+    },
+    {
+      src: "/assets/projects/desktop/job-5/5-2.jpeg",
+      alt: "Interior painting project",
+      width: 800,
+      height: 800,
+      category: "interior, carpentry, wood-finishing",
+      jobId: "job-5"
+    },
+    {
+      src: "/assets/projects/desktop/job-5/5-3-bf-stairs.jpeg",
+      alt: "Interior painting project",
+      width: 800,
+      height: 800,
+      category: "interior, carpentry, wood-finishing",
+      jobId: "job-5"
+    },
+    {
+      src: "/assets/projects/desktop/job-5/5-4.jpeg",
+      alt: "Interior painting project",
+      width: 800,
+      height: 800,
+      category: "interior, carpentry, wood-finishing",
+      jobId: "job-5"
+    },
+    {
+      src: "/assets/projects/desktop/job-5/5-5.jpeg",
+      alt: "Interior painting project",
+      width: 800,
+      height: 800,
+      category: "interior, carpentry, wood-finishing",
+      jobId: "job-5"
+    },
+    {
+      src: "/assets/projects/desktop/job-5/5-6-af.jpeg",
+      alt: "Interior painting project",
+      width: 800,
+      height: 800,
+      category: "interior, carpentry, wood-finishing",
+      jobId: "job-5"
+    },
+    {
+      src: "/assets/projects/desktop/job-5/5-7-af-stairs.jpeg",
+      alt: "Interior painting project",
+      width: 800,
+      height: 800,
+      category: "interior, carpentry, wood-finishing",
+      jobId: "job-5"
+    },
     {
       src: "/assets/projects/desktop/job-1/1-af-1.jpeg",
       alt: "Interior painting project",
@@ -352,7 +464,7 @@ export default function GalleryPage() {
           <div className="text-center mb-8 sm:mb-12 max-w-3xl mx-auto">
             <h2 className="max-w-3xl mx-auto text-center mb-4 sm:mb-12 bg-[rgb(var(--color-background))] rounded-full p-2 sm:p-4 border-x border-gray-500 border-solid shadow-lg text-2xl sm:text-3xl font-bold">Our Work</h2>
             <p className="text-[rgb(var(--color-text))] bg-[rgb(var(--color-background))] rounded-xl p-3 sm:p-4 border-x border-gray-500 border-solid shadow-lg shadow-white/20 mx-auto w-full text-sm sm:text-base">
-              At <span className="text-[rgb(var(--color-text-emphasized))]">Prolific Paint @ Design</span>, we take pride in our craftsmanship and attention to detail. Browse through our
+              At <span className="text-[rgb(var(--color-text-emphasized))]">Prolific Paint & Design</span>, we take pride in our craftsmanship and attention to detail. Browse through our
               gallery to see examples of our work across various projects throughout Central Oregon.
             </p>
           </div>
@@ -422,14 +534,14 @@ export default function GalleryPage() {
             </div>
 
             <div className="space-y-4 sm:space-y-6 bg-[rgb(var(--color-background))] rounded-xl p-4 sm:p-6 border-2 border-gray-500 shadow-lg">
-              <h3 className="text-xl sm:text-2xl font-bold text-center text-[rgb(var(--color-text-emphasized))]">Interior Painting</h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-center text-[rgb(var(--color-text-emphasized))]">Interior Painting & Carpentry</h3>
               <div className="grid grid-cols-2 gap-4 sm:gap-6">
                 <div className="space-y-2 sm:space-y-3">
                   <p className="text-xs sm:text-sm font-medium text-center bg-[rgb(var(--color-background-2))] py-1 sm:py-2 px-2 sm:px-4 rounded-lg border border-gray-500">Before</p>
                   <div className="h-[200px] sm:h-[300px]">
                     <GalleryImage
-                      src="/assets/projects/desktop/job-1/1-b4-2.jpeg"
-                      alt="Before: Faded interior paint"
+                      src="/assets/projects/desktop/job-5/5-3-bf-stairs.jpeg"
+                      alt="Before: Faded interior paint, old stairs"
                       width={800}
                       height={600}
                       className="h-full"
@@ -440,8 +552,8 @@ export default function GalleryPage() {
                   <p className="text-xs sm:text-sm font-medium text-center bg-[rgb(var(--color-background-2))] py-1 sm:py-2 px-2 sm:px-4 rounded-lg border border-gray-500">After</p>
                   <div className="h-[200px] sm:h-[300px]">
                     <GalleryImage
-                      src="/assets/projects/desktop/job-1/1-af-3.jpeg"
-                      alt="After: Fresh interior paint"
+                      src="/assets/projects/desktop/job-5/5-7-af-stairs.jpeg"
+                      alt="After: Fresh interior paint, new stairs"
                       width={800}
                       height={600}
                       className="h-full"

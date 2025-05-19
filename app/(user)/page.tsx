@@ -27,9 +27,9 @@ export const metadata: Metadata = {
   openGraph: {
     images: [
       {
-        url: "/paint-splash-full-optimized.jpeg",
-        width: 1920,
-        height: 1080,
+        url: "/paint-splash-mobile-optimized-360x640.webp",
+        width: 360,
+        height: 640,
         alt: "Prolific Paint & Design Hero Image"
       }
     ]
@@ -97,32 +97,32 @@ export default function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto">
               <ServiceCard
                 title="Interior/Exterior Painting"
-                description="From homes to small commercial spaces, we offer professional painting services using premium paints and expert application techniques."
+                description="Professional painting services for homes and small commercial spaces."
                 image="/interior-painting.svg"
               />
               <ServiceCard
                 title="Carpentry"
-                description="Enhance your home's curb appeal and protect it from the elements with our durable exterior painting solutions."
+                description="Expert carpentry services to enhance your home's appearance and protection."
                 image="/carpentry.svg"
               />
               <ServiceCard
                 title="Junk/Snow Removal"
-                description="Give your kitchen a fresh look with our cabinet painting and refinishing services, at a fraction of replacement cost."
+                description="Efficient junk and snow removal services for your property."
                 image="/junk.svg"
               />
               <ServiceCard
                 title="Wood-Finishes"
-                description="Protect and beautify your outdoor living spaces with our professional deck staining and sealing services."
+                description="Professional wood finishing services for your outdoor spaces."
                 image="/wood-finishes.svg"
               />
               <ServiceCard
                 title="Power Washing"
-                description="From small holes to major damage, our drywall repair services will make your walls look like new again."
+                description="Thorough power washing services for all surfaces."
                 image="/power-washing.svg"
               />
               <ServiceCard
                 title="General Contracting"
-                description="Beyond painting, we offer a variety of residential contracting services to help with all your home improvement needs."
+                description="Complete residential contracting services for all your home improvement needs."
                 image="/general-contracting.svg"
               />
             </div>
@@ -138,7 +138,7 @@ export default function HomePage() {
         {/* Why Choose Us Section */}
         <div className="flex flex-col items-center py-32 sm:py-48 px-2 sm:px-4 bg-[rgb(var(--color-background))] border-y border-gray-200 border-solid gap-8">
           <div className="max-w-3xl mx-auto text-center mb-6 sm:mb-12 bg-[rgb(var(--color-background-2))] rounded-full p-3 sm:p-4 border-x border-gray-500 border-solid shadow-lg">
-            <h2 className="text-xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-4">Why Choose Prolific Paint @ Design</h2>
+            <h2 className="text-xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-4">Why Choose Prolific Paint & Design</h2>
             <p className="text-sm sm:text-lg">
               What sets us apart from the competition is our commitment to quality, competitive pricing, and exceptional
               customer service.
@@ -180,7 +180,7 @@ export default function HomePage() {
               <div className="bg-black/20 border border-gold/20 rounded-lg p-6 sm:p-8 shadow-lg">
                 <h3 className="text-xl sm:text-2xl font-bold mb-4">Our Commitment to Excellence</h3>
                 <p className="mb-6 text-sm sm:text-base">
-                  At <span className="text-[rgb(var(--color-text-emphasized))]">Prolific Paint @ Design</span>, we believe in delivering exceptional results through our dedication to quality craftsmanship and customer satisfaction. Our team of experienced professionals ensures that every project receives the attention to detail it deserves.
+                  At <span className="text-[rgb(var(--color-text-emphasized))]">Prolific Paint & Design</span>, we believe in delivering exceptional results through our dedication to quality craftsmanship and customer satisfaction. Our team of experienced professionals ensures that every project receives the attention to detail it deserves.
                 </p>
                 <Button asChild variant="outline" className="border-white bg-[rgb(var(--color-button-2nd))] hover:bg-[rgb(var(--color-button-2nd-hover))] text-lg w-full sm:w-auto">
                   <Link href="/about">Learn More About Us</Link>
@@ -341,10 +341,10 @@ export default function HomePage() {
                     <div>
                       <h4 className="font-medium">Email</h4>
                       <a
-                        href="mailto:prolificpaint.@gmail.com"
+                        href="mailto:prolificpaint.design@gmail.com"
                         className="text-muted-foreground hover:text-gold transition-colors"
                       >
-                        prolificpaint.@gmail.com
+                        prolificpaint.design@gmail.com
                       </a>
                     </div>
                   </div>

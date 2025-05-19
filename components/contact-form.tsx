@@ -12,16 +12,35 @@ import { CheckCircle } from "lucide-react"
 export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setError(null)
 
-    // Simulate form submission
-    setTimeout(() => {
+    const formData = new FormData(e.currentTarget)
+    formData.append("access_key", process.env.NEXT_PUBLIC_WEB_3_FORMS_KEY || "")
+    formData.append("redirect", window.location.href)
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      })
+
+      const data = await response.json()
+
+      if (data.success) {
+        setIsSubmitted(true)
+      } else {
+        setError("Something went wrong. Please try again.")
+      }
+    } catch (err) {
+      setError("Failed to submit form. Please try again.")
+    } finally {
       setIsSubmitting(false)
-      setIsSubmitted(true)
-    }, 1500)
+    }
   }
 
   if (isSubmitted) {
@@ -45,23 +64,28 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
+      {error && (
+        <div className="p-3 bg-red-100 text-red-700 rounded-md text-sm">
+          {error}
+        </div>
+      )}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="space-y-2">
           <Label htmlFor="name">Name</Label>
-          <Input id="name" placeholder="Your name" required />
+          <Input id="name" name="name" placeholder="Your name" required />
         </div>
         <div className="space-y-2">
           <Label htmlFor="phone">Phone</Label>
-          <Input id="phone" type="tel" placeholder="Your phone number" required />
+          <Input id="phone" name="phone" type="tel" placeholder="Your phone number" required />
         </div>
       </div>
       <div className="space-y-2">
         <Label htmlFor="email">Email</Label>
-        <Input id="email" type="email" placeholder="Your email address" required />
+        <Input id="email" name="email" type="email" placeholder="Your email address" required />
       </div>
       <div className="space-y-2">
         <Label htmlFor="message">Message</Label>
-        <Textarea id="message" placeholder="How can we help you?" rows={5} required />
+        <Textarea id="message" name="message" placeholder="How can we help you?" rows={5} required />
       </div>
       <Button type="submit" disabled={isSubmitting} className="w-full bg-[rgb(var(--color-button))] hover:bg-[rgb(var(--color-button-hover))] text-[rgb(var(--color-button-text))]">
         {isSubmitting ? "Sending..." : "Send Message"}

@@ -46,6 +46,7 @@ export default function QuoteForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [files, setFiles] = useState<File[]>([])
+  const [error, setError] = useState<string | null>(null)
 
   const handleServiceTypeChange = (type: string) => {
     setServiceTypes(prev => ({
@@ -63,12 +64,40 @@ export default function QuoteForm() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setError(null)
 
-    // Simulate form submission
-    setTimeout(() => {
+    const formData = new FormData(e.currentTarget)
+    formData.append("access_key", process.env.NEXT_PUBLIC_WEB_3_FORMS_KEY || "")
+    formData.append("redirect", window.location.href)
+
+    // Add service types to form data
+    Object.entries(serviceTypes).forEach(([type, checked]) => {
+      formData.append(`service_type_${type}`, checked.toString())
+    })
+
+    // Add files if any
+    files.forEach((file) => {
+      formData.append("files", file)
+    })
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      })
+
+      const data = await response.json()
+
+      if (data.success) {
+        setIsSubmitted(true)
+      } else {
+        setError("Something went wrong. Please try again.")
+      }
+    } catch (err) {
+      setError("Failed to submit form. Please try again.")
+    } finally {
       setIsSubmitting(false)
-      setIsSubmitted(true)
-    }, 1500)
+    }
   }
 
   if (isSubmitted) {
@@ -93,25 +122,30 @@ export default function QuoteForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
+      {error && (
+        <div className="p-3 bg-red-100 text-red-700 rounded-md text-sm">
+          {error}
+        </div>
+      )}
       <div className="space-y-4">
         <h3 className="text-lg font-medium">Contact Information</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="space-y-2">
             <Label htmlFor="name">Name</Label>
-            <Input id="name" placeholder="Your name" required />
+            <Input id="name" name="name" placeholder="Your name" required />
           </div>
           <div className="space-y-2">
             <Label htmlFor="phone">Phone</Label>
-            <Input id="phone" type="tel" placeholder="Your phone number" required />
+            <Input id="phone" name="phone" type="tel" placeholder="Your phone number" required />
           </div>
         </div>
         <div className="space-y-2">
           <Label htmlFor="email">Email</Label>
-          <Input id="email" type="email" placeholder="Your email address" required />
+          <Input id="email" name="email" type="email" placeholder="Your email address" required />
         </div>
         <div className="space-y-2">
           <Label htmlFor="address">Project Address</Label>
-          <Input id="address" placeholder="Address of the project" required />
+          <Input id="address" name="address" placeholder="Address of the project" required />
         </div>
       </div>
 

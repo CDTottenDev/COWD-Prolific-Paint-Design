@@ -135,45 +135,44 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Cabinet Refinishing */}
+      {/* carpentry */}
       <section className="py-16 bg-[rgb(var(--color-background-2))] border-y border-gray-200 border-solid">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <Image
-                src="/assets/projects/desktop/job-4/4-4.jpeg"
-                alt="Cabinet Refinishing Services"
-                width={600}
-                height={400}
+                src="/assets/projects/desktop/job-5/5-6-af.jpeg"
+                alt="Interior Painting & Carpentry"
+                width={800}
+                height={800}
                 className="rounded-lg shadow-lg"
               />
             </div>
             <div className="space-y-6">
-              <h2 className="text-3xl font-bold">Cabinet Refinishing</h2>
+              <h2 className="text-3xl font-bold">Carpentry</h2>
               <p className="text-muted-foreground">
-                Give your kitchen or bathroom a fresh new look without the cost of full replacement. Our cabinet
-                refinishing services can transform your space at a fraction of the cost of new cabinets.
+                Professional carpentry services for all your home improvement needs.
               </p>
               <div className="space-y-3 flex flex-col items-center">
                 <div className="flex items-start gap-2">
                   <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
-                  <span>Kitchen cabinet painting</span>
+                  <span>Custom baseboard and crown molding installation</span>
                 </div>
                 <div className="flex items-start gap-2">
                   <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
-                  <span>Bathroom vanity refinishing</span>
+                  <span>Door and window trim customization</span>
                 </div>
                 <div className="flex items-start gap-2">
                   <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
-                  <span>Custom color matching</span>
+                  <span>Hardwood and laminate flooring solutions</span>
                 </div>
                 <div className="flex items-start gap-2">
                   <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
-                  <span>Hardware replacement</span>
+                  <span>Exterior siding and cladding installation</span>
                 </div>
                 <div className="flex items-start gap-2">
                   <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
-                  <span>Clear coat finishes</span>
+                  <span>Decorative wood paneling and feature walls</span>
                 </div>
               </div>
               <div className="pt-4">
@@ -199,33 +198,33 @@ export default function ServicesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
             <div className="bg-[rgb(var(--color-background-3))] p-6 rounded-lg border text-black/80 shadow-md shadow-[rgb(var(--color-shadow))]">
-              <h3 className="text-xl font-bold mb-3 text-center">Carpentry Services</h3>
+              <h3 className="text-xl font-bold mb-3 text-center">General Contracting</h3>
               <p className="text-muted-foreground mb-4 text-center">
-                Professional carpentry services for all your home improvement needs.
+                Professional general contracting services for all your home or business improvement needs.
               </p>
               <div className="flex flex-col-2 justify-center gap-4 mb-6">
                 <div className="space-y-2">
                   <div className="flex items-start gap-2">
                     <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
-                    <span>Trim installation and repair</span>
+                    <span>Custom trim and molding installation</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
+                    <span>Door and window frame installation</span>
                   </div>
                   <div className="flex items-start gap-2">
                     <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
                     <span>Floor installation and repair</span>
                   </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
-                    <span>Wood wall accents</span>
-                  </div>
                 </div>
                 <div className="space-y-2">
                   <div className="flex items-start gap-2">
                     <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
-                    <span>Trim wall accents</span>
+                    <span>Siding installation and repair</span>
                   </div>
                   <div className="flex items-start gap-2">
                     <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
-                    <span>Siding installation and repair</span>
+                    <span>Custom wood wall accents and features</span>
                   </div>
                 </div>
               </div>

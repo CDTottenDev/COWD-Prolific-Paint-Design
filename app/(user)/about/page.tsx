@@ -26,7 +26,7 @@ export default function AboutPage() {
             <div className="w-full">
               <Image
                 src="/assets/about/desktop/owner-pic-dsk.jpeg"
-                alt="Kevin, Owner of Prolific Paint @ Design"
+                alt="Kevin, Owner of Prolific Paint & Design"
                 width={600}
                 height={600}
                 className="rounded-lg shadow-lg w-full h-auto object-cover aspect-square"
@@ -127,7 +127,7 @@ export default function AboutPage() {
           <div className="max-w-3xl mx-auto text-center mb-8 sm:mb-12 bg-[rgb(var(--color-background-2))] rounded-full p-3 sm:p-4 border-x border-gray-500 border-solid shadow-lg">
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-4">What Sets Us Apart</h2>
             <p className="text-xs sm:text-sm md:text-base text-muted-foreground">
-              Here's why homeowners, contractors, and realtors throughout Central Oregon choose Prolific Paint @ Design.
+              Here's why homeowners, contractors, and realtors throughout Central Oregon choose Prolific Paint & Design.
             </p>
           </div>
 

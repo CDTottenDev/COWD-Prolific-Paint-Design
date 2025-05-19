@@ -49,7 +49,7 @@ export default function QuotePage() {
       <section className="py-36 flex w-full justify-center items-center border-t-2 border-gray-500">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center mb-6 sm:mb-12 bg-[rgb(var(--color-background))] rounded-full p-3 sm:p-4 border-x border-gray-500 border-solid shadow-lg">
-            <h2 className="text-3xl font-bold mb-4">Why Choose Prolific Paint @ Design</h2>
+            <h2 className="text-3xl font-bold mb-4">Why Choose Prolific Paint & Design</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Here's what sets us apart from other painting and contracting companies in Central Oregon.
             </p>

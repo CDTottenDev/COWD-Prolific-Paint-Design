@@ -28,9 +28,9 @@ export const metadata: Metadata = {
     description: "Professional residential and commercial painting services in Bend, Oregon. Expert interior and exterior painting, cabinet refinishing, and contracting services.",
     images: [
       {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
+        url: "/paint-splash-mobile-optimized-360x640.webp",
+        width: 360,
+        height: 640,
         alt: "Prolific Paint & Design Services",
       },
     ],

@@ -25,8 +25,8 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-gold" />
-                <a href="mailto:prolificpaint.@gmail.com" className="text-sm hover:text-gold transition-colors">
-                  prolificpaint.@gmail.com
+                <a href="mailto:prolificpaint.design@gmail.com" className="text-sm hover:text-gold transition-colors">
+                  prolificpaint.design@gmail.com
                 </a>
               </div>
               <div className="flex items-center gap-2">
@@ -62,7 +62,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 pt-6 border-t border-gray-800 text-center text-sm text-gray-400">
-          <p>© {new Date().getFullYear()} Prolific Paint @ Design. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Prolific Paint & Design. All rights reserved.</p>
           <p className="mt-1">Serving Bend, Central Oregon, and the entire state of Oregon.</p>
         </div>
       </div>

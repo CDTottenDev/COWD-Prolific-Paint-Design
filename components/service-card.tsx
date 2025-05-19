@@ -26,7 +26,7 @@ export default function ServiceCard({ title, description, image, className }: Se
           <div className="flex-1 p-4 pr-2 relative z-10 flex flex-col justify-between">
             <div>
               <h3 className="text-lg font-bold text-black mb-1">{title}</h3>
-              <p className="text-sm text-black line-clamp-3">{description}</p>
+              <p className="text-sm text-black">{description}</p>
             </div>
             <Button asChild variant="link" className="p-0 h-auto text-black">
               <Link href="/services" className="flex items-center gap-1 text-sm">

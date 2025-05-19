@@ -51,8 +51,8 @@ export default function ContactPage() {
                   <div>
                     <h3 className="text-lg font-bold">Email</h3>
                     <p className="text-muted-foreground mb-1">Send us an email anytime</p>
-                    <a href="mailto:prolificpaint.@gmail.com" className="text-gold hover:underline">
-                      prolificpaint.@gmail.com
+                    <a href="mailto:prolificpaint.design@gmail.com" className="text-gold hover:underline">
+                      prolificpaint.design@gmail.com
                     </a>
                   </div>
                 </div>
@@ -160,7 +160,7 @@ export default function ContactPage() {
             <div className="bg-[rgb(var(--color-background-3))] p-6 rounded-lg border text-black/80 shadow-md shadow-[rgb(var(--color-shadow))]">
               <h3 className="text-xl font-bold">What types of payment do you accept?</h3>
               <p className="text-muted-foreground">
-                We accept cash, checks, and all major credit cards for your convenience.
+                We accept cash, checks, and money orders.
               </p>
             </div>
           </div>

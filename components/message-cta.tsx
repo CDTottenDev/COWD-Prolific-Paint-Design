@@ -10,7 +10,7 @@ interface MessageCTAProps {
 }
 
 export default function MessageCTA({ className, variant = "default", size = "default" }: MessageCTAProps) {
-  const phoneNumber = "4582317495"
+  const phoneNumber = "5416103864"
   const messageLink = `sms:${phoneNumber}`
   
   return (
