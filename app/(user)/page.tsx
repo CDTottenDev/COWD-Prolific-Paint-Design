@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import ContactForm from "@/components/contact-form"
 import ServiceCard from "@/components/service-card"
-import TestimonialCard from "@/components/testimonial-card"
 import {
   Star,
   Phone,
