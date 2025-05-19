@@ -273,7 +273,7 @@ export default function HomePage() {
         </section>
 
         {/* Testimonials */}
-        <section className="flex items-center justify-center py-24 sm:py-36 bg-[rgb(var(--color-background))] border-y border-gray-200 border-solid px-4">
+        {/* <section className="flex items-center justify-center py-24 sm:py-36 bg-[rgb(var(--color-background))] border-y border-gray-200 border-solid px-4">
           <div className="container">
             <div className="max-w-3xl mx-auto text-center mb-8 sm:mb-12 bg-[rgb(var(--color-background-2))] rounded-full p-4 border-x border-gray-500 border-solid shadow-lg">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">What Our Clients Say</h2>
@@ -303,7 +303,7 @@ export default function HomePage() {
               />
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Contact Section with Map */}
         <section className="flex items-center justify-center py-24 sm:py-36 bg-[rgb(var(--color-background))] border-y border-gray-200 border-solid px-2 sm:px-4">

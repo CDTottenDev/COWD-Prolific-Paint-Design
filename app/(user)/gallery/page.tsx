@@ -567,7 +567,7 @@ export default function GalleryPage() {
       </section>
 
       {/* Client Testimonials */}
-      <section className="py-12 sm:py-24">
+      {/* <section className="py-12 sm:py-24">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8 sm:mb-12">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">What Our Clients Say</h2>
@@ -594,7 +594,7 @@ export default function GalleryPage() {
             </blockquote>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="py-8 sm:py-12 bg-black border-t-2 border-gray-500 border-solid">
