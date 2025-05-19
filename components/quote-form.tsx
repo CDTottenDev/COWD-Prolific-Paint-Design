@@ -93,8 +93,9 @@ export default function QuoteForm() {
       } else {
         setError("Something went wrong. Please try again.")
       }
-    } catch (err) {
-      setError("Failed to submit form. Please try again.")
+    } catch (err: unknown) {
+      const errorMessage = err instanceof Error ? err.message : "Failed to submit form. Please try again."
+      setError(errorMessage)
     } finally {
       setIsSubmitting(false)
     }
