@@ -75,6 +75,40 @@ export default function QuoteForm() {
       formData.append(`service_type_${type}`, checked.toString())
     })
 
+    // Add square footage if provided
+    const sqft = (document.getElementById('sqft') as HTMLInputElement)?.value
+    if (sqft) {
+      formData.append("square_footage", sqft)
+    }
+
+    // Add selected painting services
+    if (serviceTypes.residential || serviceTypes.commercial) {
+      const selectedPaintingServices = services.slice(0, 8).filter(service => {
+        const checkbox = document.getElementById(service.id) as HTMLInputElement
+        return checkbox?.checked
+      })
+      if (selectedPaintingServices.length > 0) {
+        formData.append("selected_painting_services", selectedPaintingServices.map(s => s.label).join(", "))
+      }
+    }
+
+    // Add selected contracting services
+    if (serviceTypes.contracting) {
+      const selectedContractingServices = services.slice(8).filter(service => {
+        const checkbox = document.getElementById(service.id) as HTMLInputElement
+        return checkbox?.checked
+      })
+      if (selectedContractingServices.length > 0) {
+        formData.append("selected_contracting_services", selectedContractingServices.map(s => s.label).join(", "))
+      }
+    }
+
+    // Add timeline selection
+    const timelineInput = document.querySelector('input[name="timeline"]:checked') as HTMLInputElement
+    if (timelineInput) {
+      formData.append("timeline", timelineInput.value)
+    }
+
     // Add files if any
     files.forEach((file) => {
       formData.append("files", file)
@@ -192,7 +226,7 @@ export default function QuoteForm() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
               {services.slice(0, 8).map((service) => (
                 <div key={service.id} className="flex items-center space-x-2">
-                  <Checkbox id={service.id} />
+                  <Checkbox id={service.id} name={`service_${service.id}`} />
                   <Label htmlFor={service.id}>{service.label}</Label>
                 </div>
               ))}
@@ -209,7 +243,7 @@ export default function QuoteForm() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
               {services.slice(8).map((service) => (
                 <div key={service.id} className="flex items-center space-x-2">
-                  <Checkbox id={service.id} />
+                  <Checkbox id={service.id} name={`service_${service.id}`} />
                   <Label htmlFor={service.id}>{service.label}</Label>
                 </div>
               ))}
@@ -222,7 +256,7 @@ export default function QuoteForm() {
         <h3 className="text-lg font-medium">Project Details</h3>
         <div className="space-y-2">
           <Label htmlFor="timeline">Desired Timeline</Label>
-          <RadioGroup defaultValue="flexible">
+          <RadioGroup defaultValue="flexible" name="timeline">
             <div className="flex items-center space-x-2">
               <RadioGroupItem value="asap" id="asap" />
               <Label htmlFor="asap">As soon as possible</Label>
