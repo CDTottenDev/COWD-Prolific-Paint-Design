@@ -75,7 +75,7 @@ export default function QuoteForm() {
       phone: formData.get('phone') as string,
       email: formData.get('email') as string,
       address: formData.get('address') as string,
-      description: formData.get('description') as string,
+      description: formData.get('description') as string || "",
     }
 
     // Add service types
@@ -83,32 +83,18 @@ export default function QuoteForm() {
       data[`service_type_${type}`] = checked.toString()
     })
 
+    // Add selected services
+    services.forEach(service => {
+      const checkbox = document.getElementById(service.id) as HTMLInputElement
+      if (checkbox?.checked) {
+        data[`Service_${service.id}`] = "on"
+      }
+    })
+
     // Add square footage if provided
     const sqft = (document.getElementById('sqft') as HTMLInputElement)?.value
     if (sqft) {
       data.square_footage = sqft
-    }
-
-    // Add selected painting services
-    if (serviceTypes.residential || serviceTypes.commercial) {
-      const selectedPaintingServices = services.slice(0, 8).filter(service => {
-        const checkbox = document.getElementById(service.id) as HTMLInputElement
-        return checkbox?.checked
-      })
-      if (selectedPaintingServices.length > 0) {
-        data.selected_painting_services = selectedPaintingServices.map(s => s.label).join(", ")
-      }
-    }
-
-    // Add selected contracting services
-    if (serviceTypes.contracting) {
-      const selectedContractingServices = services.slice(8).filter(service => {
-        const checkbox = document.getElementById(service.id) as HTMLInputElement
-        return checkbox?.checked
-      })
-      if (selectedContractingServices.length > 0) {
-        data.selected_contracting_services = selectedContractingServices.map(s => s.label).join(", ")
-      }
     }
 
     // Add timeline selection
