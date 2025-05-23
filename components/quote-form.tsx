@@ -66,19 +66,27 @@ export default function QuoteForm() {
     setIsSubmitting(true)
     setError(null)
 
+    // Create form data object
     const formData = new FormData(e.currentTarget)
-    formData.append("access_key", process.env.NEXT_PUBLIC_WEB_3_FORMS_KEY || "")
-    formData.append("redirect", window.location.href)
+    const data: Record<string, string> = {
+      access_key: process.env.NEXT_PUBLIC_WEB_3_FORMS_KEY || "",
+      redirect: window.location.href,
+      name: formData.get('name') as string,
+      phone: formData.get('phone') as string,
+      email: formData.get('email') as string,
+      address: formData.get('address') as string,
+      description: formData.get('description') as string,
+    }
 
-    // Add service types to form data
+    // Add service types
     Object.entries(serviceTypes).forEach(([type, checked]) => {
-      formData.append(`service_type_${type}`, checked.toString())
+      data[`service_type_${type}`] = checked.toString()
     })
 
     // Add square footage if provided
     const sqft = (document.getElementById('sqft') as HTMLInputElement)?.value
     if (sqft) {
-      formData.append("square_footage", sqft)
+      data.square_footage = sqft
     }
 
     // Add selected painting services
@@ -88,7 +96,7 @@ export default function QuoteForm() {
         return checkbox?.checked
       })
       if (selectedPaintingServices.length > 0) {
-        formData.append("selected_painting_services", selectedPaintingServices.map(s => s.label).join(", "))
+        data.selected_painting_services = selectedPaintingServices.map(s => s.label).join(", ")
       }
     }
 
@@ -99,31 +107,29 @@ export default function QuoteForm() {
         return checkbox?.checked
       })
       if (selectedContractingServices.length > 0) {
-        formData.append("selected_contracting_services", selectedContractingServices.map(s => s.label).join(", "))
+        data.selected_contracting_services = selectedContractingServices.map(s => s.label).join(", ")
       }
     }
 
     // Add timeline selection
     const timelineInput = document.querySelector('input[name="timeline"]:checked') as HTMLInputElement
     if (timelineInput) {
-      formData.append("timeline", timelineInput.value)
+      data.timeline = timelineInput.value
     }
-
-    // Add files if any
-    files.forEach((file) => {
-      formData.append("files", file)
-    })
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        mode: "cors",
-        body: formData
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(data)
       })
 
-      const data = await response.json()
+      const result = await response.json()
 
-      if (data.success) {
+      if (result.success) {
         setIsSubmitted(true)
       } else {
         setError("Something went wrong. Please try again.")
