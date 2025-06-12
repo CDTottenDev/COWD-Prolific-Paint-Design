@@ -1,0 +1,47 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="300" fill="#F8F8F8"/>
+  
+  <!-- Main container with border -->
+  <rect x="20" y="20" width="360" height="260" rx="8" fill="#FFF" stroke="#E0E0E0" stroke-width="2"/>
+  
+  <!-- Staircase background -->
+  <rect x="40" y="40" width="320" height="160" rx="4" fill="#F0F8FF"/>
+  
+  <!-- Staircase steps (from bottom to top) -->
+  <!-- Step 1 (bottom) -->
+  <rect x="60" y="160" width="280" height="20" fill="#4295F4"/>
+  <rect x="60" y="160" width="10" height="20" fill="#2A75D4"/> <!-- Side/shadow -->
+  
+  <!-- Step 2 -->
+  <rect x="70" y="140" width="270" height="20" fill="#FFC107"/>
+  <rect x="70" y="140" width="10" height="20" fill="#DDA000"/> <!-- Side/shadow -->
+  
+  <!-- Step 3 -->
+  <rect x="80" y="120" width="260" height="20" fill="#4295F4"/>
+  <rect x="80" y="120" width="10" height="20" fill="#2A75D4"/> <!-- Side/shadow -->
+  
+  <!-- Step 4 -->
+  <rect x="90" y="100" width="250" height="20" fill="#FFC107"/>
+  <rect x="90" y="100" width="10" height="20" fill="#DDA000"/> <!-- Side/shadow -->
+  
+  <!-- Step 5 -->
+  <rect x="100" y="80" width="240" height="20" fill="#4295F4"/>
+  <rect x="100" y="80" width="10" height="20" fill="#2A75D4"/> <!-- Side/shadow -->
+  
+  <!-- Step 6 (top) -->
+  <rect x="110" y="60" width="230" height="20" fill="#FFC107"/>
+  <rect x="110" y="60" width="10" height="20" fill="#DDA000"/> <!-- Side/shadow -->
+  
+  <!-- Handrail -->
+  <rect x="60" y="60" width="5" height="120" fill="#795548"/> <!-- Vertical post -->
+  <rect x="60" y="55" width="280" height="5" fill="#795548"/> <!-- Horizontal rail -->
+  
+  <!-- Color palette at bottom -->
+  <rect x="40" y="220" width="320" height="40" rx="4" fill="#F5F5F5"/>
+  <circle cx="60" cy="240" r="10" fill="#4295F4"/>
+  <circle cx="100" cy="240" r="10" fill="#FFC107"/>
+  <circle cx="140" cy="240" r="10" fill="#0F9D58"/>
+  <circle cx="180" cy="240" r="10" fill="#DB3236"/>
+  <rect x="220" y="230" width="120" height="20" rx="10" fill="#E0E0E0"/>
+</svg>

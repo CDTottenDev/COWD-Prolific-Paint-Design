@@ -47,6 +47,9 @@ export default function Navbar() {
             <Link href="/contact" className="text-sm font-medium hover:text-gold transition-colors border-x-2 rounded-md px-2 py-1 whitespace-nowrap hover:border-yellow-200/50">
               Contact
             </Link>
+            <Link href="/blog" className="text-sm font-medium hover:text-gold transition-colors border-x-2 rounded-md px-2 py-1 whitespace-nowrap hover:border-yellow-200/50">
+              Blog
+            </Link>
           </div>
         </nav>
         <div className="hidden lg:flex items-center justify-end w-1/3 gap-4">
@@ -112,6 +115,13 @@ export default function Navbar() {
                   onClick={toggleMenu}
                 >
                   Contact
+                </Link>
+                <Link 
+                  href="/blog" 
+                  className="block px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gold transition-colors" 
+                  onClick={toggleMenu}
+                >
+                  Blog
                 </Link>
                 <div className="px-4 py-2">
                   <Button 
