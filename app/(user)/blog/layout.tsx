@@ -4,8 +4,6 @@ import { Inter } from "next/font/google"
 
 import "@/app/(user)/globals.css"
 
-const inter = Inter({ subsets: ["latin"] })
-
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.prolificpaintdesign.com/blog"),
   title: {
@@ -68,23 +66,6 @@ export const metadata: Metadata = {
   },
   verification: {
     google: "your-google-verification-code",
-  },
-}
-
-// JSON-LD structured data for better SEO
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: "Prolific Paint & Design Blog",
-  description: "Expert house painting tips, trends, and insights",
-  url: "https://www.prolificpaintdesign.com/blog",
-  publisher: {
-    "@type": "Organization",
-    name: "Prolific Paint & Design",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://www.prolificpaintdesign.com/logo.png",
-    },
   },
 }
 
